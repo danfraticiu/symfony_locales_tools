@@ -28,7 +28,7 @@ final class ExportCommand extends \Knp\Command\Command
 
   protected function execute(InputInterface $input, OutputInterface $output)
   {
-    $path = trim($input->getArgument('path'), '/');
+    $path = rtrim($input->getArgument('path'), '/');
     $outputPath = $input->getArgument('output_path');
 
     if ($outputPath === null) {

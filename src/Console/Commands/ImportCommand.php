@@ -54,7 +54,10 @@ final class ImportCommand extends Command
           $data[$locale] = [];
         }
 
-        $this->accessor->setValue($data[$locale], $propertyPath, $value);
+        if ($value !== '') {
+          $this->accessor->setValue($data[$locale], $propertyPath, $value);
+        }
+
       }
     }
 
@@ -62,7 +65,7 @@ final class ImportCommand extends Command
       $yamlData = [];
       $this->normalize($yamlData, $translations);
 
-      file_put_contents("{$outputPath}/{$locale}.yml", Yaml::dump($yamlData));
+      file_put_contents("{$outputPath}/{$locale}.yml", Yaml::dump($yamlData, 9999));
     }
   }
 

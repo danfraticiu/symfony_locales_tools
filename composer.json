@@ -1,0 +1,21 @@
+{
+    "name": "danfraticiu/locale_exporter_importer",
+    "authors": [
+        {
+            "name": "Dan Frăticiu",
+            "email": "dev@shiftmarketingstudio.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Shift\\": "src"
+        }
+    },
+    "require": {
+        "silex/silex": "^2.0",
+        "league/csv": "^8.2",
+        "knplabs/console-service-provider": "^2.0",
+        "symfony/yaml": "^3.2",
+        "symfony/property-access": "^3.2"
+    }
+}

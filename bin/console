@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+ini_set('memory_limit', '512M');
+set_time_limit(0);
+
+// include the composer autoloader
+$app = include __DIR__ . '/../bootstrap.php';
+
+/** @var \Knp\Console\Application $console */
+$console = $app['console'];
+
+foreach (glob(__DIR__ . '/../src/Console/Commands/*Command.php') as $command) {
+  $className = "\\Shift\\Console\\Commands\\" . basename($command, '.php');
+  $console->add(new $className());
+
+}
+
+$console->run();

@@ -36,6 +36,7 @@ final class ExportCommand extends \Knp\Command\Command
     }
 
     $csvWrite = Writer::createFromPath($outputPath, 'c');
+    $csvWrite->setOutputBOM(Writer::BOM_UTF8);
 
     $glob = glob($path . '/*.yml');
     $data = [
